@@ -1,0 +1,8 @@
+.user {
+    border: 1px solid lightgrey;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}

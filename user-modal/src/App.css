@@ -1,0 +1,43 @@
+#root {
+    background-color: darkslategrey;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.card {
+    background: white;
+    display: flex;
+    width: 40%;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+#user-form {
+    margin-bottom: 50px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-wrapper input {
+    border: 1px solid lightgrey;
+    height: 32px;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.input-wrapper label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
