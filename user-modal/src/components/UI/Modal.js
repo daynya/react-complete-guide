@@ -13,7 +13,7 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
             </button>
           </div>
           <p>
-            Please entere a valid name and age.
+            Please enter a valid name and age.
           </p>
         </div>
       </div>

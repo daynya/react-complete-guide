@@ -27,7 +27,6 @@ const App = () => {
     );
   }
 
-  // const {isShowing, toggle} = useModal();
 
   return (
     <>
@@ -37,12 +36,6 @@ const App = () => {
       <section className="card" id="users">
         {content}
       </section>
-      {/* <button className="modal-button" onClick={toggle}>Modal Button</button>
-      <Modal
-        isShowing={isShowing}
-        hide={toggle}
-        message={"hello"}
-      /> */}
     </>
   );
 };
