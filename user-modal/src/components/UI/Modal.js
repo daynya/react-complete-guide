@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createPortal from 'react-dom';
+import Button from '../UI/Button';
 
 const Modal = ({ isShowing, hide, message }) => isShowing ? ReactDOM.createPortal(
     <React.Fragment>
@@ -11,9 +12,7 @@ const Modal = ({ isShowing, hide, message }) => isShowing ? ReactDOM.createPorta
             <h2>Invalid Input</h2>
           </div>
           <p>{message}</p>
-          <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
-            <span aria-hidden="true">Okay</span>
-          </button>
+          <Button type="button" className="modal-close-button" data-dismiss="modal" aria-lable="Close" onClicke={hide}>Okay</Button>
         </div>
       </div>
     </React.Fragment>, document.body

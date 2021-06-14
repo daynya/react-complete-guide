@@ -45,7 +45,7 @@
 
   .modal-header {
     display: flex;
-    background-color: purple;
+    background-color: #ac0e77;
   }
 
   .modal-header h2 {
@@ -53,17 +53,14 @@
     margin: 20px 10px;
   }
 
-  .modal-close-button {
+  .modal .button {
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1;
-    color: purple;
     cursor: pointer;
     border: none;
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px 10px 10px 0;
-    background: white;
+    margin: 0 auto 10px auto;
+    width: max-content;
   }
   
   button {
