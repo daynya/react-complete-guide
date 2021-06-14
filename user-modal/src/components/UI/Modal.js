@@ -2,19 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import createPortal from 'react-dom';
 
-const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
+const Modal = ({ isShowing, hide, message }) => isShowing ? ReactDOM.createPortal(
     <React.Fragment>
-      <div className="modal-overlay"/>
-      <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
+      <div className="modal-overlay" />
+      <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog" onClick={hide}>
         <div className="modal">
           <div className="modal-header">
-            <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <h2>Invalid Input</h2>
           </div>
-          <p>
-            Please enter a valid name and age.
-          </p>
+          <p>{message}</p>
+          <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
+            <span aria-hidden="true">Okay</span>
+          </button>
         </div>
       </div>
     </React.Fragment>, document.body

@@ -19,12 +19,14 @@ const UserInput = (props) => {
         setEnteredAge(event.target.value);
       } else {
         toggle();
+        setMessage('Please enter a valid age (greater than 0)');
         return;
       }
     };
   
     const FormSubmitHandler = (event) => {
       event.preventDefault();
+      const message = "Please enter both a name and age";
 
       const resetInputs = () => {
           setEnteredName('')
@@ -36,11 +38,12 @@ const UserInput = (props) => {
           resetInputs();
       } else {
           toggle();
+          setMessage('Please enter valid username and age');
           return;       
       }
 };
 
-const {isShowing, toggle} = useModal();
+const {isShowing, toggle, message, setMessage} = useModal();
   
   return (
     <>
@@ -66,6 +69,7 @@ const {isShowing, toggle} = useModal();
       <Modal
         isShowing={isShowing}
         hide={toggle}
+        message={message}
       />
     </>
     );
