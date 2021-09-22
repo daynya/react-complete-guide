@@ -1,7 +1,7 @@
 import reactDom from "react-dom";
 import React, { useState } from 'react';
 
-const useHttp = () => {
+const useHttp = (requestConfig, applyData) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -12,7 +12,11 @@ const useHttp = () => {
       setError(null);
       try {
         const response = await fetch(
-          'https://react-http-69472.firebaseio.com/tasks.json'
+          requestConfig.url, {
+            method: requestConfig.method,
+            headers: requestConfig.headers,
+            body: JSON.stringify(requestConfig.body)
+          }
         );
   
         if (!response.ok) {
@@ -20,6 +24,7 @@ const useHttp = () => {
         }
   
         const data = await response.json();
+        applyData(data);
   
         const loadedTasks = [];
   
@@ -34,6 +39,11 @@ const useHttp = () => {
       setIsLoading(false);
     };
 
+    return {
+      isLoading,
+      error,
+      sendRequest
+    };
 };
 
 export default useHttp;
